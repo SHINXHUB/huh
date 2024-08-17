@@ -70,11 +70,11 @@
 
 		Main = {
 			["Auto Farm Level"] = false,
-			["Fast Auto Farm Level"] = false,
+			["Fast Auto Farm Level"] = true,
 	
 			--[Mob Aura]
 	
-			["Distance Mob Aura"] = 1000, -- {Max : 5000} 
+			["Distance Mob Aura"] = 2000, -- {Max : 5000} 
 			["Mob Aura"] = false,
 	
 			--[World 1]
@@ -143,7 +143,7 @@
 			["Auto Boss Select"] = false,
 			["Select Boss"] = {},
 	
-			["Auto Quest"] = false,
+			["Auto Quest"] = true,
 		},
 		Mastery = {
 			["Select Multi Swordd"] = {},
@@ -154,9 +154,9 @@
 			["Mob Health (%)"] = 15,
 		},
 		Configs = {
-			["Double Quest"] = false,
-			["Bypass TP"] = false,
-			["Select Team"] = {"Marine"}, --{Pirate,Marine}
+			["Double Quest"] = true,
+			["Bypass TP"] = true,
+			["Select Team"] = {"Pirate"}, --{Pirate,Marine}
 	
 	
 			["Fast Attack"] = true,
@@ -167,8 +167,8 @@
 	
 			--[Misc Configs]
 			["Auto Haki"] = true,
-			["Distance Auto Farm"] = 20, --{Max : 50}
-			["Camera Shaker"] = false,
+			["Distance Auto Farm"] = 30, --{Max : 50}
+			["Camera Shaker"] = true,
 	
 			--[Skill Configs]
 			["Skill Z"] = true,
@@ -188,12 +188,12 @@
 			["Auto Stats Kaitun"] = false,
 	
 			["Select Stats"] = {"Melee"}, --{Max Stats,Melee,Defense,Sword,Devil Fruit,Gun}
-			["Point Select"] = 3, --{Recommended , Max : 9}
+			["Point Select"] = 9, --{Recommended , Max : 9}
 	
 			--[Auto Redeem Code]
 	
 			["Enabled Auto Redeem Code"] = false,
-			["Select Level Redeem Code"] = 1, --{Max : 2400}
+			["Select Level Redeem Code"] = 10, --{Max : 2400}
 		},
 	
 		Misc = {
@@ -203,7 +203,7 @@
 			["Infinities Geppo"] = false,
 			["Infinities Energy"] = false,
 	
-			["No Fog"] = false,
+			["No Fog"] = true,
 			["Wall-TP"] = false,
 	
 			["Fly"] = false,
@@ -241,9 +241,9 @@
 		},
 	
 		HUD = {
-			["FPS"] = 60,
+			["FPS"] = 240,
 			["LockFPS"] = true,
-			["Boost FPS Windows"] = false,
+			["Boost FPS Windows"] = true,
 			['White Screen'] = false,
 		},
 		ConfigsUI = {
@@ -298,7 +298,7 @@
 		Rejoin = true,
 		Anti_AFK = true,
 		K_MAX = 50,
-		Chest_Lock = 50,
+		Chest_Lock = 45,
 		FastModeD = "Fast",
 		FastMode = "Normal",
 		Delay_C = 15
@@ -3386,9 +3386,9 @@ end)
     
     function Text(value)
 		game.StarterGui:SetCore("SendNotification", {
-			Title = "Makori Notification", 
+			Title = "SHIN Notification", 
 			Text = tostring(value),
-			Icon = "http://www.roblox.com/asset/?id=14395120725",
+			Icon = "http://www.roblox.com/asset/?id=18952692046",
 			Duration = 10
 		})
 	end
@@ -3706,7 +3706,7 @@ SOMEXHUBMODILE.Name = "SOMEXHUBMODILE"
         MODILEMAGE.BorderSizePixel = 0
         MODILEMAGE.Position = UDim2.new(0, 3, 0, 2)
         MODILEMAGE.Size = UDim2.new(0, 45, 0, 45)
-        MODILEMAGE.Image = "http://www.roblox.com/asset/?id=14395120725"
+        MODILEMAGE.Image = "http://www.roblox.com/asset/?id=18952692046"
 
 do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(50,255,255)
@@ -3879,7 +3879,7 @@ function Update:Window(text,logo,keybind)
 	Hubb.Position = UDim2.new(0, 480, 0, 0)
 	Hubb.Size = UDim2.new(0, 81, 0, 27)
 	Hubb.Font = Enum.Font.GothamSemibold
-	Hubb.Text = "Version|X เวอร์ชั่นเอ๊กซ์"
+	Hubb.Text = "Check Banned 🟢"
 	Hubb.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Hubb.TextSize = 17.000
 	Hubb.TextXAlignment = Enum.TextXAlignment.Left
@@ -3899,7 +3899,7 @@ local LogoHub = Instance.new("ImageLabel")
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 1)
 	LogoHub.Size = UDim2.new(0, 150, 0, 150)
-	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(14395120725)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(18952692046)
 
 	local ScrollTab = Instance.new("ScrollingFrame")
 	ScrollTab.Name = "ScrollTab"
@@ -4209,7 +4209,7 @@ local LogoToggle = Instance.new("ImageLabel")
 	LogoToggle.BackgroundTransparency = 1.000
 	LogoToggle.Position = UDim2.new(0, 7, 0, 2)
 	LogoToggle.Size = UDim2.new(0, 26, 0, 26)
-	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(14395120725)
+	LogoToggle.Image = "http://www.roblox.com/asset/?id="..tostring(18952692046)
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
@@ -4787,7 +4787,7 @@ local LogoToggle = Instance.new("ImageLabel")
 end
 
 
-local Library = Update:Window("Makori","",Enum.KeyCode.RightControl);
+local Library = Update:Window("SHIN X HUB","",Enum.KeyCode.RightControl);
 
 Main = Library:Tab("Genneral",6026568198)
 Sta = Library:Tab("Stats",7040410130)
@@ -4808,7 +4808,7 @@ Main:Toggle("Auto Farm",_G.Setting_table.AutoFarm,function(vu)
 end)
 
 
-Main:Toggle("Auto 600 Mas Melee",_G.Setting_table.MasMelee,function(vu)
+Main:Toggle("Auto 600 Mastery Melee",_G.Setting_table.MasMelee,function(vu)
 	MasMelee = vu
 	_G.Setting_table.MasMelee = vu
 	Update_Setting(getgenv()['MyName'])
@@ -4875,7 +4875,7 @@ end)
 
 Main:Seperator("Auto New Sea")
 
-Main:Toggle("Auto New World",_G.Setting_table.MasMelee,function(vu)
+Main:Toggle("Auto Sea 2",_G.Setting_table.MasMelee,function(vu)
     Auto_New_A = vu
 	_G.Setting_table.Second_Farm = vu
 	Update_Setting(getgenv()['MyName'])
@@ -4923,7 +4923,7 @@ spawn(function()
     end
 end)
 
-Main:Toggle("Auto Third World",false,function(vu)
+Main:Toggle("Auto Sea 3",false,function(vu)
 Auto_Three_World = vu
 end)
 
@@ -5743,7 +5743,7 @@ end)
 		end)
 	end)
 
-	Main:Toggle("Auto Farm Bone",_G.Setting_table.Farm_Bone,function(vu)
+	Main:Toggle("Auto Bone",_G.Setting_table.Farm_Bone,function(vu)
 		Auto_Farm_Bone = vu
 		_G.Setting_table.Farm_Bone = vu
 		Update_Setting(getgenv()['MyName'])
@@ -5837,7 +5837,7 @@ end)
 	end)
 
 
-	Main:Toggle("Auto Cake Prince",_G.Setting_table.Auto_Spikey_Trident,function(vu)
+	Main:Toggle("Auto Katakuri",_G.Setting_table.Auto_Spikey_Trident,function(vu)
 		Auto_Spikey_Trident = vu
 		_G.Setting_table.Auto_Spikey_Trident = vu
 		Update_Setting(getgenv()['MyName'])
@@ -6388,16 +6388,16 @@ end)
 		end
 	end)
 
-	Main:Seperator("Mas Farm")
+	Main:Seperator("Mastery")
 
-	Main:Toggle("Auto Farm Fruit",_G.Setting_table.Farm_Fruit,function(vu)
+	Main:Toggle("Auto Mastery Fruit",_G.Setting_table.Farm_Fruit,function(vu)
 		Auto_Farm_Fruit = vu
 		_G.Setting_table.Farm_Fruit = vu
 		Update_Setting(getgenv()['MyName'])
 	end)
 
     MinHealth = 20
-	Main:Slider("Kill At %",1,100,20,function(vu)
+	Main:Slider("Health %",1,100,20,function(vu)
 		MinHealth = vu
 		_G.Setting_table.MinHealth = vu
 		Update_Setting(getgenv()['MyName'])
@@ -6787,7 +6787,7 @@ spawn(function()
             end
         end
     end)
-Miscf:Seperator("Farm Nearest")
+Miscf:Seperator("Kill Aura")
 
 ddiss = Miscf:Label("")
 
@@ -6799,7 +6799,7 @@ task.spawn(function()
 	end
 end)
 
-Miscf:Toggle("Mob Aura",_G.Setting_table.Mob_Aura,function(vu)
+Miscf:Toggle("Kill Aura",_G.Setting_table.Mob_Aura,function(vu)
 	AutoMobAura = vu 
 	_G.Setting_table.Mob_Aura = vu
 	Update_Setting(getgenv()['MyName'])
@@ -9178,7 +9178,7 @@ end)
         end
     end)
     
-    Miscf:Seperator("Kitsune")
+    Miscf:Seperator("Kitsune Island")
         
     YESS = Miscf:Label("")
     
@@ -9186,9 +9186,9 @@ end)
     pcall(function()
         while wait() do
             if game:GetService("Workspace").Map:FindFirstChild('KitsuneIsland') then
-                YESS:Set('🟢: Kitsune is Spwan')
+                YESS:Set('Kitsune Island 🟢')
             else
-                YESS:Set('🔴: Kitsune Not Found')
+                YESS:Set('Kitsune Island 🔴')
             end
         end
     end)
@@ -11371,23 +11371,23 @@ spawn(function()
                         elseif _G.Lv_Ken < 5000 then
                             if XER == nil then
 								if Lv < 1800 then
-									Text("❌ Level < 1800")
+									Text("🔴 Level < 1800")
 									_G.Have_Lv = "0"
 								else
-									Text("✅ Level >= 1800")
+									Text("🟢 Level >= 1800")
 									_G.Have_Lv = "1"
 								end
 								if Beli < 5000000 then
-									Text("❌ Money < 5M")
+									Text("🔴 Money < 5M")
 									_G.Have_B = "0"
 								else
-									Text("✅ Money >= 5M")
+									Text("🟢 Money >= 5M")
 									_G.Have_B = "1"
 								end
 								if _G.Lv_Ken < 5000 then
-									Text("❌ Ken Level < 5000")
+									Text("🔴 Ken Level < 5000")
 								else
-									Text("✅ Ken Level == 5000")
+									Text("🟢 Ken Level == 5000")
 								end
 								XER = true
 							end
@@ -11396,23 +11396,23 @@ spawn(function()
                     else
                         if XER == nil then
                             if Lv < 1800 then
-                                Text("❌ Level < 1800")
+                                Text("🔴 Level < 1800")
                                 _G.Have_Lv = "0"
                             else
-                                Text("✅ Level >= 1800")
+                                Text("🟢 Level >= 1800")
                                 _G.Have_Lv = "1"
                             end
                             if Beli < 5000000 then
-                                Text("❌ Money < 5M")
+                                Text("🔴 Money < 5M")
                                 _G.Have_B = "0"
                             else
-                                Text("✅ Money >= 5M")
+                                Text("🟢 Money >= 5M")
                                 _G.Have_B = "1"
                             end
                             if _G.Lv_Ken < 5000 then
-                                Text("❌ Ken Level < 5000")
+                                Text("🔴 Ken Level < 5000")
                             else
-                                Text("✅ Ken Level == 5000")
+                                Text("🟢 Ken Level == 5000")
                             end
                             XER = true
                         end
@@ -13813,9 +13813,9 @@ task.spawn(function()
 	while task.wait() do
 		pcall(function()
 			if game.Workspace._WorldOrigin.Locations:FindFirstChild("Mirage Island") then
-				mr:Set("Mirage Island : Spawn ✅")
+				mr:Set("Mirage Island 🟢")
 			else
-				mr:Set("Mirage Island : Not Spawn ❌")
+				mr:Set("Mirage Island 🔴")
 			end
 		end)
 	end
