@@ -2717,8 +2717,6 @@ spawn(function()
     end
 end)
 
-if Third_Sea then
-local MiscFarm = Tabs.Main:AddSection("Katakuri Farm")
 local Mob_Kill_Cake_Prince = Tabs.Main:AddParagraph({
     Title = "Katakuri Need Kill Mob",
     Content = ""
@@ -2805,7 +2803,6 @@ spawn(function()
 		end
     end)
 
-        if Third_Sea then
     local ToggleCakeV2 = Tabs.Main:AddToggle("ToggleCakeV2", {Title = "Kill Dought King | Need Spawn",Description = "ออโต้ คาตาคุริ V2 | ต้องเสกก่อน", Default = false })
     ToggleCakeV2:OnChanged(function(Value)
         _G.AutoCakeV2 = Value
@@ -2844,7 +2841,6 @@ end
         end
     end)
     
-    if Second_Sea then
 	local MiscFarm = Tabs.Main:AddSection("Ectoplasm Farm")
     local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {
         Title = "Auto Ectoplasm",
@@ -4693,74 +4689,6 @@ spawn(function()
     end)
 end)
 
-local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Fast Attack Player",Description = "ความเร็วโจมตีผู้เล่น", Default = true })
-
-ToggleFastAttack:OnChanged(function(Value)
- _G.FastAttackFaiFao = Value
-end)
-Options.ToggleFastAttack:SetValue(true)
-
-
-
-local SliderDelayAttackPlayer = Setting:AddSlider("SliderDelayAttackPlayer", {
-    Title = "Fast Attack Player",
-    Description = "ความเร็วโจมตีผู้เล่น",
-    Default = 5,
-    Min = 0,
-    Max = 5,
-    Rounding = 1,
-    Callback = function(Value)
-       _G.DelayAttackPlayer = Value
-    end
-})
-
-SliderDelayAttackPlayer:OnChanged(function(Value)
-   _G.DelayAttackPlayer = Value
-end)
-
-SliderDelayAttackPlayer:SetValue(5)
-
-spawn(function()
-while wait() do
-    pcall(function()
-        if _G.FastAttackFaiFao then
-            repeat wait(_G.DelayAttackPlayer)
-               AttackNoCoolDown()
-            until not _G.FastAttackFaiFao
-        end
-    end)
-end
-end)
-local Camera = require(game.ReplicatedStorage.Util.CameraShaker)
-Camera:Stop()
-
-
-function getAllBladeHitsPlayers(Sizes)
-	local Hits = {}
-	local Client = game.Players.LocalPlayer
-	local Characters = game:GetService("Workspace").Characters:GetChildren()
-	for i=1,#Characters do local v = Characters[i]
-		local Human = v:FindFirstChildOfClass("Humanoid")
-		if v.Name ~= game.Players.LocalPlayer.Name and Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
-			table.insert(Hits,Human.RootPart)
-		end
-	end
-	return Hits
-end
-
-function getAllBladeHits(Sizes)
-	local Hits = {}
-	local Client = game.Players.LocalPlayer
-	local Enemies = game:GetService("Workspace").Enemies:GetChildren()
-	for i=1,#Enemies do local v = Enemies[i]
-		local Human = v:FindFirstChildOfClass("Humanoid")
-		if Human and Human.RootPart and Human.Health > 0 and Client:DistanceFromCharacter(Human.RootPart.Position) < Sizes+5 then
-			table.insert(Hits,Human.RootPart)
-		end
-	end
-	return Hits
-end
-
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Enabled Bring Mob",Description = "รวมมอน", Default = true })
     ToggleBringMob:OnChanged(function(Value)
         _G.BringMob = Value
@@ -4841,11 +4769,11 @@ end
      ]]
          
 
-local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = "Auto Use Race V4",Description = "ออโต้ ใช้ เผ่า V4", Default = true })
-ToggleFast:OnChanged(function(Value)
+local ToggleRace = Tabs.Setting:AddToggle("ToggleRace", {Title = "Auto Use Race V4",Description = "ออโต้ ใช้ เผ่า V4", Default = true })
+ToggleRace:OnChanged(function(Value)
     _G.V4 = Value
 end)
-Options.ToggleFast:SetValue(true)
+Options.ToggleRace:SetValue(true)
 spawn(function()
     while wait() do
         pcall(function()
@@ -4858,11 +4786,11 @@ spawn(function()
     end
 end)
 
-local ToggleFast = Tabs.Setting:AddToggle("ToggleFast", {Title = "Auto Use Race V4",Description = "ออโต้ ใช้ เผ่า V3", Default = true })
-ToggleFast:OnChanged(function(Value)
+local ToggleRace = Tabs.Setting:AddToggle("ToggleRace", {Title = "Auto Use Race V4",Description = "ออโต้ ใช้ เผ่า V3", Default = true })
+ToggleRace:OnChanged(function(Value)
     _G.V3 = Value
 end)
-Options.ToggleFast:SetValue(true)
+Options.ToggleRace:SetValue(true)
 spawn(function()
     while wait() do
         pcall(function()
