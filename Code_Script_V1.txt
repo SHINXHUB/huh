@@ -2221,12 +2221,12 @@ function TweenTempleLegit()
 		moon2 = "http://www.roblox.com/asset/?id=9709139597"
 		moon1 = "http://www.roblox.com/asset/?id=9709135895"
 		moonreal = MoonTextureId()
-		cofullmoonkothangbeo = "Bad Moon"
+		cofullmoonkothangbeo = "🔴"
 		if moonreal == moon5 or moonreal == moon4 then
 			if moonreal == moon5 then
-				cofullmoonkothangbeo = "Full Moon"
+				cofullmoonkothangbeo = "Full Moon 🟢"
 			elseif moonreal == moon4 then
-				cofullmoonkothangbeo = "Next Night"
+				cofullmoonkothangbeo = "Next Night 🔴"
 			end
 		end
 		return cofullmoonkothangbeo
@@ -2383,12 +2383,12 @@ CamShake:Stop()
         moon2 = "http://www.roblox.com/asset/?id=9709139597"
         moon1 = "http://www.roblox.com/asset/?id=9709135895"
         moonreal = MoonTextureId()
-        cofullmoonkothangbeo = "Bad Moon"
+        cofullmoonkothangbeo = "🔴"
         if moonreal == moon5 or moonreal == moon4 then
             if moonreal == moon5 then
-                cofullmoonkothangbeo = "Full Moon"
+                cofullmoonkothangbeo = "Full Moon 🟢"
             elseif moonreal == moon4 then
-                cofullmoonkothangbeo = "Next Night"
+                cofullmoonkothangbeo = "Next Night 🔴"
             end
         end
         return cofullmoonkothangbeo
