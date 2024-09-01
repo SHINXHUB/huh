@@ -2503,34 +2503,34 @@ end)
 ---
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "MIKIMARU HUB", HidePremium = false, IntroText = "MIKIMARU HUB", SaveConfig = true, ConfigFolder = "MIKIMARU HUB"})
+local Window = OrionLib:MakeWindow({Name = "SHIN X HUB", HidePremium = false, IntroText = "SHIN X HUB", SaveConfig = true, ConfigFolder = "SHIN X HUB"})
 ----------Tab-----------------------
 local W = Window:MakeTab({
-    Name = "Thông Tin",
+    Name = "Player Stats",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local M = Window:MakeTab({
-    Name = "Chính",
+    Name = "Main Farm",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local ST = Window:MakeTab({
-    Name = "Cài đặt",
+    Name = "Sub Farming",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local IQ = Window:MakeTab({
-    Name = "Vật phẩm",
+    Name = "Item",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local S = Window:MakeTab({
-    Name = "chri số",
+    Name = "number",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2560,7 +2560,7 @@ local Wld = Window:MakeTab({
 })
 
 local SV = Window:MakeTab({
-    Name = "Thông tin server",
+    Name = "Game server",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2572,7 +2572,7 @@ local D = Window:MakeTab({
 })
 
 local R = Window:MakeTab({
-    Name = "Tộc V4",
+    Name = "Race V4",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -11270,7 +11270,7 @@ spawn(function()
     end)
 end)
 
-local Delay = 1
+local Delay = 0.15
 
 spawn(function()
 while wait() do
