@@ -2609,7 +2609,7 @@ spawn(function()
     end
 end)
 
-Main:Toggle("ออโต้ ตี V2", false, function(value)
+Main:Toggle("ออโต้ ตีคาตาคุริ V2", false, function(value)
     _G.Autodoughking = value
     StopTween( _G.Autodoughking)
 end)
@@ -3860,7 +3860,7 @@ spawn(function()
     end
 end)
 
-Set:Toggle("บานพาส เทเลพอร์ต", true, function(value)
+Set:Toggle("บายพาส เทเลพอร์ต", true, function(value)
     BypassTP = value
 end)
 
@@ -8732,25 +8732,17 @@ Misc:Button("เสกผลปีศาจ [ เก่า ]", function()
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------Race V4 Tab
-Race:Button("Reset Character", function()
+Race:Button("รีเซ็ตตัวละคร", function()
     game.Players.LocalPlayer.Character.Head:Destroy()
 end)
 
-Race:Seperator("Teleport")
+Race:Seperator("เทเลพอร์ต")
 
-Race:Button("Teleport To Top Of Great Tree", function()
+Race:Button("เทเลพอร์ตไปยังยอดต้นไม้ใหญ่", function()
     ATween(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
 end)
 
-Race:Button("Teleport To Temple Of Time", function()
-    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
-end)
-
-Race:Button("Teleport To Lever Pull", function()
-    ATween(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
-end)
-
-Race:Button("Teleport To Race Door", function()
+Race:Button("ไปที่ ประตูเผ่า", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     wait(0.1)
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
@@ -8787,66 +8779,15 @@ Race:Button("Teleport To Race Door", function()
     end
 end)
 
-Race:Button("Teleport To Acient One", function()
+Race:Button("ไปที่ Acient One", function()
     ATween(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
 
-Race:Button("Unlock Lever", function()
-    venyx:Notify("Unlocked")
-    if game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt") then
-        game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt"):Remove()
-    else
-    end
-    wait(0.1)
-    local ProximityPrompt = Instance.new("ProximityPrompt")
-    ProximityPrompt.Parent = game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt
-    ProximityPrompt.MaxActivationDistance = 10
-    ProximityPrompt.ActionText = "Secrets Beholds Inside"
-    ProximityPrompt.ObjectText = "An unknown lever of time"
-    function onProximity()
-        local part = game:GetService("Workspace").Map["Temple of Time"].MainDoor1
-        local TweenService = game:GetService("TweenService")
-        local startPosition = part.Position
-        local endPosition = startPosition + Vector3.new(0, -50, 0)
-        local tweenInfo = TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-        local tween = TweenService:Create(part, tweenInfo, {Position = endPosition})
-        tween:Play()
-        local partnew = game:GetService("Workspace").Map["Temple of Time"].MainDoor2
-        local TweenService = game:GetService("TweenService")
-        local startPosition = partnew.Position
-        local endPosition = startPosition + Vector3.new(0, -50, 0)
-        local tweenInfo = TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-        local tween = TweenService:Create(partnew, tweenInfo, {Position = endPosition})
-        tween:Play()
-        local SoundSFX = Instance.new("Sound")
-        SoundSFX.Parent = workspace
-        SoundSFX.SoundId = "rbxassetid://1904813041"
-        SoundSFX:Play()
-        SoundSFX.Name = "POwfpxzxzfFfFF"
-        game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt"):Remove()
-        wait(5)
-        workspace:FindFirstChild("POwfpxzxzfFfFF"):Remove()
-        game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
-        game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
-        game:GetService("Workspace").Map["Temple of Time"].NoGlitching:Remove()
-    end
-    ProximityPrompt.Triggered:Connect(onProximity)
-end)
-
-Race:Button("Clock Acces", function()
-    game:GetService("Workspace").Map["Temple of Time"].DoNotEnter:Remove()
-    game:GetService("Workspace").Map["Temple of Time"].ClockRoomExit:Remove()
-end)
-
-Race:Button("Disabled Inf Stairs", function()
-	game.Players.LocalPlayer.Character.InfiniteStairs.Disabled = true
-end)
-
-Race:Button("Buy Ancient One Quest", function()
+Race:Button("ซื้อเควส Ancient One", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
 end)
 
-Race:Seperator("Auto Race")
+Race:Seperator("เผ่า V4 ")
 
 local FM = Race:Label("")
 task.spawn(function()
@@ -8869,7 +8810,7 @@ task.spawn(function()
     end
 end)
 
-Race:Toggle("Auto Trail", false, function(value)
+Race:Toggle("ออโต้ ผ่านด่าน", false, function(value)
     _G.AutoQuestRace = value
     StopTween(_G.AutoQuestRace)
 end)
@@ -8990,7 +8931,7 @@ spawn(function()
     end)
 end)
 
-Race:Toggle("Auto Kill Player When Trail", false, function(value)
+Race:Toggle("ออโต้ ฆ่าผู้เล่น", false, function(value)
     _G.AutoKillTial = value
     StopTween(_G.AutoKillTial)
 end)
@@ -9046,7 +8987,7 @@ spawn(function()
     end
 end)
 
-Race:Toggle("Auto Buy Gear", false, function(value)
+Race:Toggle("ออโต้ ซื้อเกียร์", false, function(value)
     _G.Auto_Farm_Bone4 = value
     StopTween(_G.Auto_Farm_Bone4)
 end)
@@ -9067,7 +9008,7 @@ spawn(function()
     end)  
 end)
 
-Race:Toggle("Auto Ancient One Quest", false, function(value)
+Race:Toggle("ออโต้ แก้ติดเควส", false, function(value)
     _G.AutoRace = value
     StardFarm = value
     StopTween(_G.AutoRace)
@@ -9149,22 +9090,22 @@ spawn(function()
     end
 end)
 
-Race:Seperator("Mirage Island")
+Race:Seperator("เกาะลับ")
 
 Mirragecheck = Race:Label("")
 spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-                Mirragecheck:Set('🏝️: Mirage Island is Spawning')
+                Mirragecheck:Set('เกาะมิราจกำลังเกิดขึ้น 🟢')
             else
-                Mirragecheck:Set('❌: Mirage Island Not Found')
+                Mirragecheck:Set('ไม่พบเกาะมิราจ 🔴')
             end
         end
     end)
 end)
 
-Race:Toggle("Auto Teleport To Mirage Island", false, function(value)
+Race:Toggle("ไปที่เกาะลับ", false, function(value)
     _G.AutoMysticIsland = value
     StopTween(_G.AutoMysticIsland)
 end)
@@ -9180,7 +9121,7 @@ spawn(function()
     end)
 end)
 
-Race:Toggle("Auto Drive Boats", false, function(value)
+Race:Toggle("ออโต้ ซื้อเรือ", false, function(value)
     AutoW = value
 end)
 spawn(function()
@@ -9200,7 +9141,7 @@ spawn(function()
     end
 end)
 
-Race:Toggle("Auto Mirage Island", false, function(value)
+Race:Toggle("ออโต้ เกาะลับ", false, function(value)
     if state then
         _G.dao = true
     else
@@ -9253,7 +9194,7 @@ Race:Toggle("Auto Mirage Island", false, function(value)
     end
 end)
 
-Race:Toggle("Auto Teleport To Advanced Fruit Dealer", false, function(value)
+Race:Toggle("ไปที่ คนขายผลปีศาจ", false, function(value)
     _G.Miragenpc = value
     StopTween(_G.Miragenpc)
 end)
@@ -9269,7 +9210,7 @@ spawn(function()
     end)
 end)
 
-Race:Toggle("Auto Lock Cam To Moon", false, function(value)
+Race:Toggle("มองพระจันทร์", false, function(value)
     _G.AutoDooHee = value
 end)
 spawn(function()
@@ -9285,7 +9226,7 @@ spawn(function()
     end
 end)
 
-Race:Toggle("Auto Teleport To Blue Gear", false, function(value)
+Race:Toggle("ออโต้ เก็บเกียร์", false, function(value)
     _G.TweenMGear = value
     StopTween(_G.TweenMGear)
 end)
@@ -9307,7 +9248,7 @@ spawn(function()
     end)
 end)
 
-Race:Toggle("Auto Farm Chest Mirage Island", false, function(value)
+Race:Toggle("ออโต้ ฟาร์ม กล่อง ที่ เกาะลับ", false, function(value)
     _G.AutoChestMirage = value
     StopTween(_G.AutoChestMirage)
 end)
@@ -9336,7 +9277,7 @@ spawn(function()
 end)
 
 -----------------------------------------------------------------------------------------------------------------------------Update Event Tab
-Event:Button("Reset Character", function()
+Event:Button("รีเซ็ตตัวละคร", function()
     game.Players.LocalPlayer.Character.Head:Destroy()
 end)
 
@@ -9346,15 +9287,15 @@ spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('🟢: Frozen Dimension Spawning')
+                FrozenIsland:Set('มิติที่แช่แข็งเกิดขึ้น🟢')
             else
-                FrozenIsland:Set('🔴: Frozen Dimension Not Found')
+                FrozenIsland:Set('ไม่พบมิติที่ถูกแช่แข็ง 🔴')
             end
         end
     end)
 end)
 
-Event:Toggle("Teleport To Frozen Dimension", false, function(value)
+Event:Toggle("ไปที่ มิติแห่งการแช่แข็ง", false, function(value)
     _G.AutoFrozenDimension = value
     StopTween(_G.AutoFrozenDimension)
 end)
@@ -9369,13 +9310,13 @@ spawn(function()
         end
     end
 end)
-Event:Seperator("Kitsune Event")
+Event:Seperator("เกาะคิทสึเนะ")
 
-Event:Toggle("Teleport To Kitsune Island", false, function(value)
+Event:Toggle("ไปที่ เกาะคิทสึเนะ", false, function(value)
     _G.AutoFKitsune = value
     StopTween(_G.AutoFKitsune)
 end)
-Event:Toggle("Auto Collect Azure",false,function(a)
+Event:Toggle("ออโต้ รวบรวม Azure",false,function(a)
     _G.AutoCollectAzure = a
 end)
 spawn(function()
@@ -9403,18 +9344,18 @@ spawn(function()
     end
 end)
 
-Event:Seperator("Boats Modify")
+Event:Seperator("เรือปรับเปลี่ยน")
 
 BoatsName = {}
 for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
     table.insert(BoatsName ,v.Name)
 end
 
-local Boats = Event:Dropdown("Select Boats", BoatsName, function(value)
+local Boats = Event:Dropdown("เลือกเรือ", BoatsName, function(value)
     _G.SelectB = value
 end)
 
-Event:Button("Refresh Boats List", function()
+Event:Button("รีเซ็ตเรือ", function()
     BoatsName = {}
     Boats:Clear()
     for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
@@ -9422,7 +9363,7 @@ Event:Button("Refresh Boats List", function()
     end
 end)
 
-Event:Toggle("Teleport To Selected Boats", false, function(value)
+Event:Toggle("บินตามเรือที่เลือก", false, function(value)
     _G.TPB = bool       
     StopTween(_G.TPB)
     if _G.TPB then
@@ -9454,11 +9395,11 @@ Event:Toggle("Teleport To Selected Boats", false, function(value)
     end
 end)
 
-Event:Button("Bring Selected Boats", function()
+Event:Button("ดึงเรือ", function()
     game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame
 end)
 
-Event:Toggle("Spectate Selected Boats", false, function(value)
+Event:Toggle("ชมเรือที่เลือก", false, function(value)
     Sp = value
     local plr1 = game.Players.LocalPlayer.Character.Humanoid
     local plr2 = game:GetService("Workspace").Boats:FindFirstChild(_G.SelectB)
@@ -9468,9 +9409,9 @@ Event:Toggle("Spectate Selected Boats", false, function(value)
     game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
 end)
 
-Event:Seperator("Sea Event")
+Event:Seperator("อีเว้นท์ ทะเล")
 
-Event:Toggle("Auto Drive Boats", false, function(value)
+Event:Toggle("ออโต้ ซื้อเรือ", false, function(value)
     _G.DomadicAutoDriveBoat = value
     StopTween( _G.DomadicAutoDriveBoat)
 end)
@@ -9526,7 +9467,7 @@ spawn(function()
     end)
 end)
 
-Event:Toggle("Auto Kill Terror Shark", false, function(value)
+Event:Toggle("ออโต้ บอสฉลาม", false, function(value)
     _G.AutoTerrorshark = value
     StopTween( _G.AutoTerrorshark)
 end)
@@ -9568,7 +9509,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Kill Shark", false, function(value)
+Event:Toggle("ออโต้ ฉลาม", false, function(value)
     FarmShark = value
     StopTween(FarmShark)
 end)
@@ -9610,7 +9551,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Kill Piranha", false, function(value)
+Event:Toggle("ออโต้ โจรสลัด", false, function(value)
     _G.farmpiranya = value
     StopTween(_G.farmpiranya)
 end)
@@ -9652,7 +9593,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Kill Fish Crew Member", false, function(value)
+Event:Toggle("ออโต้ ฉลามไฟฟ้า", false, function(value)
     _G.Fish_Crew_Member = value
     StopTween(_G.Fish_Crew_Member)
 end)
@@ -9694,7 +9635,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Kill Raid Ship", false, function(value)
+Event:Toggle("ออโต้ เรือผี", false, function(value)
     _G.KillGhostShip = value
     StopTween(_G.KillGhostShip)
 end)
@@ -9722,7 +9663,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Kill Ghost Ship", false, function(value)
+Event:Toggle("ออโต้ เรือผี", false, function(value)
     _G.bjirFishBoat = value
     StopTween(_G.bjirFishBoat)
 end)
@@ -9830,7 +9771,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Teleport To Sea Beast", false, function(value)
+Event:Toggle("ไปที่ เจ้าทะเล", false, function(value)
     _G.AutoSeaBest = value
     StopTween(_G.AutoSeaBest)
 end)
@@ -9856,7 +9797,7 @@ spawn(function()
     end
 end)
 
-Event:Toggle("Auto Sea Beast", false, function(value)
+Event:Toggle("ออโต้ เจ้าทะเล", false, function(value)
     _G.Auto_Seabest = value
     StopTween(_G.Auto_Seabest)
 end)
