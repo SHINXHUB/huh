@@ -5512,7 +5512,7 @@ spawn(function()
                     game:GetService("StarterGui"):SetCore("SendNotification", {
                         Title = "Observation",
                         Text = "You Are Maxed Point",
-                        Icon = "rbxassetid://14981376704",
+                        Icon = "rbxassetid://127873067359910",
                         Duration = 2.5
                     })
                     wait(2)
@@ -5578,7 +5578,7 @@ spawn(function()
     end)
 end)
 
-Farm:Toggle("Auto Observation Haki V2", false, function(value)
+Farm:Toggle("ออโต้ ฮาคิสังเกต V2", false, function(value)
     _G.AutoObservationv2 = value
     StopTween(_G.AutoObservationv2)
 end)
@@ -5622,26 +5622,26 @@ spawn(function()
     end
 end)
 
-Farm:Seperator("Lengedary Sword")
+Farm:Seperator("ดาบหายาก")
 
 LegendSwords = Farm:Label("")
 spawn(function()
     pcall(function()
         while wait() do
             if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") then
-                LegendSwords:Set("Sword Spawn : Shisui")
+                LegendSwords:Set("ดาบ ชิซุย 🟢")
             elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") then
-                LegendSwords:Set("Sword Spawn : Wando")
+                LegendSwords:Set("ดาบ วันโด 🟢")
             elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","3") then
-                LegendSwords:Set("Sword Spawn : Saddi")
+                LegendSwords:Set("ดาบ ซาดดี 🟢")
             else
-                LegendSwords:Set("Not Found Lengedary Sword")
+                LegendSwords:Set("ดาบเกิดทุกๆ 6 ชั่วโมง ( โลก 2 )")
             end
         end
     end)
 end)
 
-Farm:Toggle("Auto Buy Lengedary Sword", false, function(value)
+Farm:Toggle("ซื้อ ดาบหายาก", false, function(value)
     _G.AutoBuyLegendarySword = value
 end)
 spawn(function()
@@ -5672,7 +5672,7 @@ spawn(function()
     end
 end)
 
-Farm:Seperator("Enchancement Colour")
+Farm:Seperator("สีฮาคิ")
 
 ColorHaki = Farm:Label("")
 local KuyMassDa = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
@@ -5682,13 +5682,13 @@ spawn(function()
             if game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1") then
                 ColorHaki:Set(KuyMassDa)
             else
-                ColorHaki:Set("Not Found HakiDealer")
+                ColorHaki:Set("ตอนนี้ยังไม่มีนะครับ")
             end
         end
     end)
 end)
 
-Farm:Toggle("Auto Buy Enchancement Colour", false, function(value)
+Farm:Toggle("ออโต้ ซื้อสีฮาคิ", false, function(value)
     _G.AutoBuyEnchancementColour = valu
 end)
 spawn(function()
@@ -5707,9 +5707,9 @@ spawn(function()
     end
 end)
 
-Farm:Seperator("Auto Material")
+Farm:Seperator("วัสดุ")
 
-Farm:Toggle("Auto Farm Radioactive", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Radioactive", false, function(value)
     Radioactive = value
     StopTween(Radioactive)
 end)
@@ -5763,7 +5763,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Mystic Droplet", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Mystic Droplet", false, function(value)
     _G.Makori_gay = value
     StopTween(_G.Makori_gay)
 end)
@@ -5817,7 +5817,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Magma Ore", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Magma Ore", false, function(value)
     _G.Umm = value
     StopTween(_G.Umm)
 end)
@@ -5920,7 +5920,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Angel Wing", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Angel Wing", false, function(value)
     _G.Auto_Wing = value
     StopTween(_G.Auto_Wing)
 end)
@@ -5974,7 +5974,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Leather", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Leather", false, function(value)
     _G.Leather = value
     StopTween(_G.Leather)
 end)
@@ -6126,7 +6126,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Scrap Metal", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Scrap Metal", false, function(value)
     Scrap = value
     StopTween(Scrap)
 end)
@@ -6278,7 +6278,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Conjured Cocoa", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Conjured Cocoa", false, function(value)
     Cocoafarm = value
     StopTween(Cocoafarm)
 end)
@@ -6332,7 +6332,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Dragon Scale", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Dragon Scale", false, function(value)
     Dragon_Scale = value
     StopTween(Dragon_Scale)
 end)
@@ -6386,7 +6386,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Gunpowder", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Gunpowder", false, function(value)
     Gunpowder = value
     StopTween(Gunpowder)
 end)
@@ -6440,7 +6440,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Fish Tail", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Fish Tail", false, function(value)
     Fish = value
     StopTween(Fish)
 end)
@@ -6494,7 +6494,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Mini Tusk", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Mini Tusk", false, function(value)
     MiniHee = value
     StopTween(MiniHee)
 end)
@@ -6548,7 +6548,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Farm Ectoplasm", false, function(value)
+Farm:Toggle("ออโต้ ฟาร์ม Ectoplasm", false, function(value)
     _G.AutoEctoplasm = value
     StopTween(_G.AutoEctoplasm)
 end)
@@ -6592,9 +6592,9 @@ spawn(function()
     end)
 end)
 
-Farm:Seperator("Auto Sword")
+Farm:Seperator("ดาบต่างๆ")
 
-Farm:Toggle("Auto Buddy Sword", false, function(value)
+Farm:Toggle("ออโต้ ดาบบิ๊กมำ", false, function(value)
     _G.AutoBudySword = value
     StopTween(_G.AutoBudySword)
 end)
@@ -6646,7 +6646,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Tushita", false, function(value)
+Farm:Toggle("ออโต้ ตีบอส ดาบทูชิตะ", false, function(value)
     _G.Autotushita = value
     StopTween( _G.Autotushita)
 end)
@@ -6698,7 +6698,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Yama", false, function(value)
+Farm:Toggle("ออโต้ ดึง ดาบยามะ", false, function(value)
     _G.AutoYama = value
     StopTween(_G.AutoYama)
 end)
@@ -6714,7 +6714,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Cavander", false, function(value)
+Farm:Toggle("ออโต้ ดาบคาวานเดอร์", false, function(value)
     _G.AutoCarvender = value
     StopTween( _G.AutoCarvender)
 end)
@@ -6766,7 +6766,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Twin Hook", false, function(value)
+Farm:Toggle("ออโต้ ตะขอคู่", false, function(value)
     _G.AutoTwinHook = value
     StopTween( _G.AutoTwinHook)
 end)
@@ -6818,7 +6818,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Hallow Scythe", false, function(value)
+Farm:Toggle("ออโต้ เคียวฮาโลว์", false, function(value)
     _G.AutoFarmBossHallow = value
     StopTween(_G.AutoFarmBossHallow)
 end)
@@ -6858,7 +6858,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Dragon Trident", false, function(value)
+Farm:Toggle("ออโต้ ตรีศูลมังกร", false, function(value)
     _G.Auto_Dragon_Trident = value
     StopTween(_G.Auto_Dragon_Trident)
 end)
@@ -6910,7 +6910,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Waden Sword", false, function(value)
+Farm:Toggle("ออโต้ ดาบวาเดน", false, function(value)
     _G.Autowaden = value
     StopTween( _G.Autowaden)
 end)
@@ -6962,7 +6962,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Pole V1", false, function(value)
+Farm:Toggle("ออโต้ กระบองสายฟ้า V1", false, function(value)
     _G.Autopole = value
     StopTween( _G.Autopole)
 end)
@@ -7014,7 +7014,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Shark Saw", false, function(value)
+Farm:Toggle("ออโต้ ฉลามเลื่อย", false, function(value)
     _G.Autosaw = value
     StopTween( _G.Autosaw)
 end)
@@ -7066,7 +7066,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Saber", false, function(value)
+Farm:Toggle("ออโต้ ดาบเซเบอร์", false, function(value)
     _G.Auto_Saber = value
     StopTween(_G.Auto_Saber)
 end)
@@ -7181,7 +7181,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Rengoku", false, function(value)
+Farm:Toggle("ออโต้ เร็นโกคุ", false, function(value)
     _G.AutoRengoku = value
     StopTween(_G.AutoRengoku)
 end)
@@ -7218,9 +7218,9 @@ spawn(function()
     end)
 end)
 
-Farm:Seperator("Auto Melee")
+Farm:Seperator("หมัดต่างๆ")
 
-Farm:Toggle("Auto Superhuman", false, function(value)
+Farm:Toggle("ออโต้ ซุปเปอร์ฮิวแมน", false, function(value)
     _G.AutoSuperhuman = value
 end)
 spawn(function()
@@ -7296,7 +7296,7 @@ spawn(function()
     end)
 end)
 
-Farm:Toggle("Auto Death Step", false, function(value)
+Farm:Toggle("ออโต้ ขาดำ", false, function(value)
     _G.AutoDeathStep = value
 end)
 spawn(function()
@@ -7321,7 +7321,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Sharkman Karate", false, function(value)
+Farm:Toggle("ออโต้ หมัดมนุษย์เงือก", false, function(value)
     _G.AutoSharkman = value
 end)
 spawn(function()
@@ -7368,7 +7368,7 @@ spawn(function()
     end)
 end)
 
-Farm:Toggle("Auto Sharkman Karate", false, function(value)
+Farm:Toggle("ออโต้ หมัดมนุษย์เงือก", false, function(value)
     _G.AutoSharkman = value
 end)
 spawn(function()
@@ -7415,7 +7415,7 @@ spawn(function()
     end)
 end)
 
-Farm:Toggle("Auto Electric Claw", false, function(value)
+Farm:Toggle("ออโต้ หมัดสายฟ้า", false, function(value)
     _G.AutoElectricClaw = value
     StopTween(_G.AutoElectricClaw)
 end)
@@ -7485,7 +7485,7 @@ spawn(function()
     end)
 end)
 
-Farm:Toggle("Auto Dragon Talon", false, function(value)
+Farm:Toggle("ออโต้ หมัดมังกร", false, function(value)
     _G.AutoDragonTalon = value
 end)
 spawn(function()
@@ -7510,7 +7510,7 @@ spawn(function()
     end
 end)
 
-Farm:Toggle("Auto Godhuman", false, function(value)
+Farm:Toggle("ออโต้ หมัดยอดมนุษย์", false, function(value)
     _G.Auto_God_Human = value
 end)
 spawn(function()
@@ -7526,7 +7526,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "rbxassetid://14981376704",
+							Icon = "rbxassetid://127873067359910",
 							Duration = 2.5
 						})
 					end
@@ -7538,7 +7538,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "rbxassetid://14981376704",
+							Icon = "rbxassetid://127873067359910",
 							Duration = 2.5
 						})
 					end
@@ -7550,7 +7550,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "rbxassetid://14981376704",
+							Icon = "rbxassetid://127873067359910",
 							Duration = 2.5
 						})
 					end
@@ -7562,7 +7562,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "rbxassetid://14981376704",
+							Icon = "rbxassetid://127873067359910",
 							Duration = 2.5
 						})
 					end
@@ -7572,7 +7572,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "rbxassetid://14981376704",
+									Icon = "rbxassetid://127873067359910",
 									Duration = 2.5
 								})
 							else
@@ -7583,7 +7583,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "rbxassetid://14981376704",
+							Icon = "rbxassetid://127873067359910",
 							Duration = 2.5
 						})
 					end
@@ -9982,7 +9982,7 @@ spawn(function()
         end
     end)
 end)
-Event:Toggle("ESP Advance Dealer", false, function(value)
+Event:Toggle(" Advance Dealer", false, function(value)
     _G.AutoESPAFD = value
     AfdESP = value
     UpdateAfdESP()
