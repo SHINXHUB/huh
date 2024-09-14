@@ -7648,25 +7648,25 @@ spawn(function()
     end
 end)
 
-Stats:Seperator("Auto Stats")
+Stats:Seperator("ค่าพลัง")
 
-Stats:Toggle("Auto Stats Melee", false, function(value)
+Stats:Toggle("ระยะประชิด", false, function(value)
     melee = value  
 end)
 
-Stats:Toggle("Auto Stats Defense", false, function(value)
+Stats:Toggle("การป้องกัน", false, function(value)
     defense = value  
 end)
 
-Stats:Toggle("Auto Stats Sword", false, function(value)
+Stats:Toggle("ดาบ", false, function(value)
     sword = value  
 end)
 
-Stats:Toggle("Auto Stats Gun", false, function(value)
+Stats:Toggle("ปืน", false, function(value)
     gun = value  
 end)
 
-Stats:Toggle("Auto Stats Fruit", false, function(value)
+Stats:Toggle("Blox Fruit", false, function(value)
     demonfruit = value  
 end)
 
@@ -7715,29 +7715,29 @@ spawn(function()
     end
 end)
 
-Stats:Slider("Point To Add", 0, 2550, 1, function(value)
+Stats:Slider("จุดที่จะเพิ่ม", 0, 2550, 1, function(value)
     _G.PointStats = value
 end)
 _G.PointStats = 1
 -----------------------------------------------------------------------------------------------------------------------------Teleport Tab
-Tele:Seperator("World Teleport")
+Tele:Seperator("ท่องเที่ยว")
 
-Tele:Button("Teleport To Frist Sea", function()
+Tele:Button("ท่องเที่ยว โลก 1", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
 end)
 
-Tele:Button("Teleport To Second Sea", function()
+Tele:Button("ท่องเที่ยว โลก 2", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
 end)
 
-Tele:Button("Teleport To Third Sea", function()
+Tele:Button("ท่องเที่ยว โลก 3", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
 end)
 
-Tele:Seperator("Island Teleport")
+Tele:Seperator("เกาะต่างๆ")
 
 if World1 then
-    Tele:Dropdown("Select Island", {
+    Tele:Dropdown("เลือกเกาะ", {
         "WindMill",
         "Marine",
         "Middle Town",
@@ -7762,7 +7762,7 @@ if World1 then
 end
 
 if World2 then
-    Tele:Dropdown("Select Island", {
+    Tele:Dropdown("เลือกเกาะ", {
         "The Cafe",
         "Frist Spot",
         "Dark Area",
@@ -7785,7 +7785,7 @@ if World2 then
 end
 
 if World3 then
-    Tele:Dropdown("Select Island", {
+    Tele:Dropdown("เลือกเกาะ", {
         "Mansion",
         "Port Town",
         "Great Tree",
@@ -7805,7 +7805,7 @@ if World3 then
     end)
 end
 
-Tele:Toggle("Teleport To Selected Island", false, function(value)
+Tele:Toggle("เริ่มการบินไปที่เกาะ", false, function(value)
     _G.TeleportIsland = value
     if _G.TeleportIsland == true then
         repeat wait()
@@ -7911,7 +7911,7 @@ Tele:Toggle("Teleport To Selected Island", false, function(value)
     StopTween(_G.TeleportIsland)
 end)
 
-Tele:Toggle("ESP Island", false, function(value)
+Tele:Toggle("มองเกาะ", false, function(value)
     _G.AutoESPisland = value
     IslandESP = value
     UpdateIslandESP()
@@ -7948,11 +7948,11 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
     table.insert(Playerslist,v.Name)
 end
 
-local SelectedPly = Player:Dropdown("Select Player", Playerslist, function(value)
+local SelectedPly = Player:Dropdown("เลือกผู้เล่น", Playerslist, function(value)
     _G.SelectPly = value
 end)
 
-Player:Button("Refresh Player List", function()
+Player:Button("รีเฟรชรายชื่อผู้เล่น", function()
     Playerslist = {}
     SelectedPly:Clear()
     for i,v in pairs(game:GetService("Players"):GetChildren()) do  
@@ -7960,7 +7960,7 @@ Player:Button("Refresh Player List", function()
     end
 end)
 
-Player:Toggle("Spectate Selected Player", false, function(value)
+Player:Toggle("ชมผู้เล่นที่เลือก", false, function(value)
     SpectatePlys = value
     local plr1 = game:GetService("Players").LocalPlayer.Character.Humanoid
     local plr2 = game:GetService("Players"):FindFirstChild(_G.SelectPly)
@@ -7970,7 +7970,7 @@ Player:Toggle("Spectate Selected Player", false, function(value)
     game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
 end)
 
-Player:Toggle("Teleport To Selected Player", false, function(value)
+Player:Toggle("เทเลพอร์ตไปยังผู้เล่นที่เลือก", false, function(value)
     _G.Teleport = bool
     if _G.Teleport == false then
         game.Players:FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
@@ -7983,7 +7983,7 @@ Player:Toggle("Teleport To Selected Player", false, function(value)
     end
 end)
 
-Player:Toggle("Auto Kill Selected Player", false, function(value)
+Player:Toggle("ฆ่าผู้เล่นที่เลือกโดยอัตโนมัติ", false, function(value)
     _G.Auto_Kill_Ply = value
     StopTween(_G.Auto_Kill_Ply)
 end)
@@ -8022,13 +8022,13 @@ spawn(function()
     end
 end)
 
-Player:Seperator("Player Quest")
+Player:Seperator("ภารกิจผู้เล่น")
 
-Player:Button("Get Kill Player Quest", function()
+Player:Button("รับภารกิจฆ่าผู้เล่น", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PlayerHunter")
 end)
 
-Player:Toggle("Auto Kill Player Quest", false, function(value)
+Player:Toggle("ภารกิจฆ่าผู้เล่นอัตโนมัติ", false, function(value)
     _G.AutoPlayerHunter = value
     StopTween(_G.AutoPlayerHunter)
 end)
@@ -8108,8 +8108,8 @@ spawn(function()
 		end)
     end
 end)
-Player:Seperator("Code")
-Player:Button("Redeem All Codes", function()
+Player:Seperator("รหัส")
+Player:Button("แลกรับรหัสทั้งหมด", function()
     function UseCode(Text)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(Text)
     end
@@ -8142,8 +8142,8 @@ Player:Button("Redeem All Codes", function()
     UseCode("1MLIKES_RESET")
     UseCode("2BILLION")
 end)
-Player:Seperator("ESP")
-Player:Toggle("ESP Player", false, function(value)
+Player:Seperator("มอง")
+Player:Toggle("มองผู้เล่น", false, function(value)
     _G.ESPPLayers = value
     ESPPlayer = value
     UpdatePlayerChams()
@@ -8157,7 +8157,7 @@ spawn(function()
         end
     end)
 end)
-Player:Toggle("ESP Chest", false, function(value)
+Player:Toggle("มองกล่อง", false, function(value)
     _G.ESPCHESTE = value
     ChestESP = value
     UpdateChestChams()
@@ -8171,7 +8171,7 @@ spawn(function()
         end
     end)
 end)
-Player:Toggle("ESP Flower", false, function(value)
+Player:Toggle("มองดอกไม้", false, function(value)
     _G.ESPFloweers = value
     FlowerESP = value
     UpdateFlowerChams()
@@ -8185,22 +8185,78 @@ spawn(function()
         end
     end)
 end)
+Player:Toggle("มองเกาะลับ", false, function(value)
+    _G.AutoESPislandMNM = value
+    MirageIslandESP = value
+    UpdateIslandMirageESP()
+end)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoESPislandMNM then
+                UpdateIslandMirageESP()
+            end
+        end
+    end)
+end)
+Player:Toggle("มองคนขายผลปีศาจ ( ทีเกาะลับ )", false, function(value)
+    _G.AutoESPAFD = value
+    AfdESP = value
+    UpdateAfdESP()
+end)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoESPAFD then
+                UpdateAfdESP()
+            end
+        end
+    end)
+end)
+Player:Toggle("มองผลปีศาจ", false, function(value)
+    _G.AutoESPFruit = value
+    DevilFruitESP = value
+    UpdateDevilChams()
+end)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoESPFruit then
+                UpdateDevilChams()
+            end
+        end
+    end)
+end)
+DemonFruit:Toggle("มองผลปีศาจ 2", false, function(value)
+    _G.AutoESPFruit2 = value
+    RealFruitESP = value
+    UpdateRealFruitChams()
+end)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoESPFruit2 then
+                UpdateRealFruitChams()
+            end
+        end
+    end)
+end)
 -----------------------------------------------------------------------------------------------------------------------------Devil Fruit Tab
-DemonFruit:Button("Shop Devil Fruit",function()
+DemonFruit:Button("ร้านผลไม้ปีศาจ",function()
     local args = {
         [1] = "GetFruits"
     }
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
     game.Players.localPlayer.PlayerGui.Main.FruitShop.Visible = true
 end)
-DemonFruit:Button("Random Fruit",function()
+DemonFruit:Button("สุ่มผลปีศาจ",function()
     local args = {
         [1] = "Cousin",
         [2] = "Buy"
     }
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
-DemonFruit:Toggle("Bring All Fruits", false, function(value)
+DemonFruit:Toggle("ดึงผลปีศาจ", false, function(value)
     _G.AutoBringFruit = value
 end)
 spawn(function()
@@ -8221,7 +8277,7 @@ spawn(function()
         end
     end)
 end)
-DemonFruit:Toggle("Store All Fruits", false, function(value)
+DemonFruit:Toggle("เก็บผลเข้ากระเป๋า", false, function(value)
     _G.AutoStoreSsFruit = value
 end)
 spawn(function()
@@ -8244,43 +8300,15 @@ spawn(function()
         end
     end)
 end)
-DemonFruit:Toggle("ESP All Fruits", false, function(value)
-    _G.AutoESPFruit = value
-    DevilFruitESP = value
-    UpdateDevilChams()
-end)
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoESPFruit then
-                UpdateDevilChams()
-            end
-        end
-    end)
-end)
-DemonFruit:Toggle("ESP Real Fruits", false, function(value)
-    _G.AutoESPFruit2 = value
-    RealFruitESP = value
-    UpdateRealFruitChams()
-end)
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoESPFruit2 then
-                UpdateRealFruitChams()
-            end
-        end
-    end)
-end)
 -----------------------------------------------------------------------------------------------------------------------------Raid Tab
-Raid:Seperator("Auto Raid")
+Raid:Seperator("ลงดัน")
 
 if World2 then
-    Raid:Button("Teleport To Lab", function()
+    Raid:Button("เทเลพอร์ตไปยังห้องแล็ป", function()
         ATween(CFrame.new(-6438.73535, 250.645355, -4501.50684))
     end)
 elseif World3 then
-    Raid:Button("Teleport To Lab", function()
+    Raid:Button("เทเลพอร์ตไปยังห้องแล็ป", function()
         ATween(CFrame.new(-5017.40869, 314.844055, -2823.0127, -0.925743818, 4.48217499e-08, -0.378151238, 4.55503146e-09, 1, 1.07377559e-07, 0.378151238, 9.7681621e-08, -0.925743818))
     end)
 end
@@ -8295,15 +8323,15 @@ for i,v in pairs(RaidsModule.advancedRaids) do
     table.insert(Raidslist,v)
 end
 
-Raid:Dropdown("Select Chip", Raidslist, function(value)
+Raid:Dropdown("เลือกชิป", Raidslist, function(value)
     _G.SelectChip = value
 end)
 
-Raid:Button("Buy Selected Chip", function()
+Raid:Button("ซื้อชิปที่เลือก", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",_G.SelectChip)
 end)
 
-Raid:Toggle("Auto Select Raid", false, function(value)
+Raid:Toggle("ออโต้ เลือกดัน", false, function(value)
     _G.AutoSelectDungeon = value
 end)
 spawn(function()
@@ -8342,7 +8370,7 @@ spawn(function()
     end
 end)
 
-Raid:Toggle("Auto Buy Chip", false, function(value)
+Raid:Toggle("ซื้อ ชิป", false, function(value)
     _G.AutoBuyChip = value
 end)
 spawn(function()
@@ -8359,7 +8387,7 @@ spawn(function()
     end)
 end)
 
-Raid:Toggle("Auto Start Raid", false, function(value)
+Raid:Toggle("เริ่มดัน", false, function(value)
     _G.Auto_StartRaid = value
 end)
 spawn(function()
@@ -8380,7 +8408,7 @@ spawn(function()
     end
 end)
 
-Raid:Toggle("Kill Aura", false, function(value)
+Raid:Toggle("คิวออร่า", false, function(value)
     _G.Kill_Aura = value
 end)
 spawn(function()
@@ -8405,7 +8433,7 @@ spawn(function()
     end)
 end)
 
-Raid:Toggle("Auto Next Island", false, function(value)
+Raid:Toggle("เปลี่ยนเกาะ", false, function(value)
     _G.Auto_Dungeon = value
     StopTween(_G.Auto_Dungeon)
 end)
@@ -8463,7 +8491,7 @@ spawn(function()
     end
 end)
 
-Raid:Toggle("Auto Awanken Fruit", false, function(value)
+Raid:Toggle("ออโต้ ซื้อสกิวผลตื่น", false, function(value)
     _G.Auto_Awakener = value
 end)
 spawn(function()
@@ -8477,9 +8505,9 @@ spawn(function()
     end)
 end)
 
-Raid:Seperator("Advanced Raid")
+Raid:Seperator("ดัน บอสลอ")
 
-Raid:Button("Buy Law Raid Chip", function()
+Raid:Button("ซื้อ ชิปดัน บอสลอ", function()
     local args = {
         [1] = "BlackbeardReward",
         [2] = "Microchip",
@@ -8488,11 +8516,11 @@ Raid:Button("Buy Law Raid Chip", function()
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-Raid:Button("Start Law Raid", function()
+Raid:Button("เริ่มดัน บอสลอ", function()
     fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon.Button.Main.ClickDetector)
 end)
 
-Raid:Toggle("Auto Law Raid", false, function(value)
+Raid:Toggle("ออโต้ ดัน บอสลอ", false, function(value)
     _G.AutoOderSword = value
     StopTween( _G.AutoOderSword)
 end)
@@ -8532,7 +8560,7 @@ spawn(function()
     end
 end)
 
-Raid:Toggle("Auto Phoenix Raid", false, function(value)
+Raid:Toggle("ออโต้ ดัน ฟีนิกซ์", false, function(value)
     _G.AutoAdvanceDungeon = value
     StopTween(_G.AutoAdvanceDungeon)
 end)
@@ -8566,18 +8594,18 @@ spawn(function()
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------Shop Tab
-Shop:Seperator("Abilities")
+Shop:Seperator("ความสามารถ")
 
-Shop:Dropdown("Select Abilities", {
-    "Geppo [$10,000 Beli]",
-    "Buso Haki [$25,000 Beli]",
-    "Soru [$25,000 Beli]",
-    "Observation Haki [$750,000 Beli]"
+Shop:Dropdown("เลือกความสามารถ", {
+    "เก็ปโปะ [$10,000 เงินเงียว]",
+    "บุโซฮาคิ [$25,000 เงินเงียว]",
+    "โซรุ [$25,000 เงินเงียว]",
+    "ฮาคิแห่งการสังเกต [$750,000 เงินเงียว]"
     }, function(value)
         _G.SelectAbilities = value
 end)
 
-Shop:Button("Buy Selected Abilities", function()
+Shop:Button("ซื้อความสามารถที่เลือก", function()
     if _G.SelectAbilities == "Geppo [$10,000 Beli]" then
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
     elseif _G.SelectAbilities == "Buso Haki [$25,000 Beli]" then
@@ -8589,25 +8617,25 @@ Shop:Button("Buy Selected Abilities", function()
     end
 end)
 
-Shop:Seperator("Melee")
+Shop:Seperator("หมัด")
 
-Shop:Dropdown("Select Melee", {
-    "Black Leg [$150,000 Beli]",
-    "Electro [$550,000 Beli]",
-    "Fishman Karate [$750,000 Beli]",
-    "Dragon Claw [$1,500 Fragments]",
-    "Superhuman [$3,000,000 Beli]",
-    "Death Step [$5,000 Fragments + $5,000,000 Beli]",
-    "Sharkman Karate [$5,000 Fragments + $2,500,000 Beli]",
-    "Electric Claw [$5,000 Fragments + $3,000,000 Beli]",
-    "Dragon Talon [$5,000 Fragments + $3,000,000 Beli]",
-    "God Human [$5,000 Fragments + $5,000,000 Beli]",
-    "Sanguine Art [$5,000 Fragments + $5,000,000 Beli]"
+Shop:Dropdown("เลือกหมัด", {
+    "Black Leg [$150,000 เงินเงียว]",
+    "Electro [$550,000 เงินเงียว]",
+    "Fishman Karate [$750,000 เงินเงียว]",
+    "Dragon Claw [$1,500 เงินม่วง]",
+    "Superhuman [$3,000,000 เงินเงียว]",
+    "Death Step [$5,000 เงินม่วง + $5,000,000 เงินเงียว]",
+    "Sharkman Karate [$5,000 เงินม่วง + $2,500,000 Beli]",
+    "Electric Claw [$5,000 เงินม่วง + $3,000,000 เงินเงียว]",
+    "Dragon Talon [$5,000 เงินม่วง + $3,000,000 เงินเงียว]",
+    "God Human [$5,000 เงินม่วง + $5,000,000 เงินเงียว]",
+    "Sanguine Art [$5,000 เงินม่วง + $5,000,000 เงินเงียว]"
     }, function(value)
         _G.SelectMelee = value
 end)
 
-Shop:Button("Buy Selected Melee", function()
+Shop:Button("ซื้อหมัดที่เลือก", function()
     if _G.SelectMelee == "Black Leg [$150,000 Beli]" then
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
     elseif _G.SelectMelee == "Electro [$550,000 Beli]" then
@@ -8636,25 +8664,25 @@ Shop:Button("Buy Selected Melee", function()
     end
 end)
 
-Shop:Seperator("Sword")
+Shop:Seperator("ดาบ")
 
-Shop:Dropdown("Select Sword", {
-    "Cutlass [$1,000 Beli]",
-    "Katana [$1,000 Beli]",
-    "Iron Mace [$25,000 Beli]",
-    "Dual Katana [$12,000 Beli]",
-    "Triple Katana [$60,000 Beli]",
-    "Pipe [$100,000 Beli]",
-    "Dual-Headed Blade [$400,000 Beli]",
-    "Bisento [$1,200,000 Beli]",
-    "Soul Cane [$750,000 Beli]",
-    "Pole V2 [5,000 Fragments]",
-    "Yama Sword [Elite Hunter 30]"
+Shop:Dropdown("เลือกดาบ", {
+    "มีดดาบ [$1,000 Beli]",
+    "ดาบคาทานะ [$1,000 เงินเงียว]",
+    "กระบองเหล็ก [$25,000 เงินเงียว]",
+    "ดาบคาทานะคู่ [$12,000 เงินเงียว]",
+    "ดาบคาทานะสามชั้น [$60,000 เงินเงียว]",
+    "ท่อ [$100,000 เงินเงียว]",
+    "ใบมีดสองหัว [$400,000 เงินเงียว]",
+    "บิเซนโต [$1,200,000 เงินเงียว]",
+    "ไม้เท้าวิญญาณ [$750,000 เงินเงียว]",
+    "กระบองสายฟ้า V2 [5,000 เงินม่วง]",
+    "ดาบยามะ [Elite Hunter 30]"
     }, function(value)
         _G.SelectSword = value
 end)
 
-Shop:Button("Buy Selected Sword", function()
+Shop:Button("ซื้อดาบที่เลือก", function()
     if _G.SelectSword == "Cutlass [$1,000 Beli]" then
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
     elseif _G.SelectSword == "Katana [$1,000 Beli]" then
@@ -8680,15 +8708,15 @@ Shop:Button("Buy Selected Sword", function()
     end
 end)
 -----------------------------------------------------------------------------------------------------------------------------Misc Tab
-Misc:Button("Rejoin Server", function()
+Misc:Button("รีจอยเซิร์ฟเวอร์", function()
     local ts = game:GetService("TeleportService")
     local p = game:GetService("Players").LocalPlayer
     ts:Teleport(game.PlaceId, p)
 end)
-Misc:Button("Hop Server", function()
+Misc:Button("เปลี่ยนเซิร์ฟเวอร์", function()
     Hop()
 end)
-Misc:Button("Fruit Rain [ Old ]", function()
+Misc:Button("เสกผลปีศาจ [ เก่า ]", function()
     for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
         v.Parent = game.Workspace.Map
         v:MoveTo(game.Players.LocalPlayer.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50)))
@@ -9966,33 +9994,4 @@ task.spawn(function()
             end
         end)
     end
-end)
-Event:Seperator("ESP")
-Event:Toggle("ESP Mirage", false, function(value)
-    _G.AutoESPislandMNM = value
-    MirageIslandESP = value
-    UpdateIslandMirageESP()
-end)
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoESPislandMNM then
-                UpdateIslandMirageESP()
-            end
-        end
-    end)
-end)
-Event:Toggle(" Advance Dealer", false, function(value)
-    _G.AutoESPAFD = value
-    AfdESP = value
-    UpdateAfdESP()
-end)
-spawn(function()
-    pcall(function()
-        while wait() do
-            if _G.AutoESPAFD then
-                UpdateAfdESP()
-            end
-        end
-    end)
 end)
