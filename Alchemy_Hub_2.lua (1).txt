@@ -9287,7 +9287,7 @@ spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('มิติที่แช่แข็งเกิดขึ้น🟢')
+                FrozenIsland:Set('มิติที่แช่แข็งเกิดขึ้น 🟢')
             else
                 FrozenIsland:Set('ไม่พบมิติที่ถูกแช่แข็ง 🔴')
             end
